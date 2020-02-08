@@ -40,7 +40,7 @@ public final class CustomMotd extends JavaPlugin implements Listener {
             {
                 Utils.reload_config_file();
                 sender.sendMessage(plugin_prefix + "Reloaded!");
-            }catch (Exception e){ sender.sendMessage(plugin_prefix + "Invalid Config Found"); }
+            }catch (Exception e){ sender.sendMessage(plugin_prefix + "Invalid Config Found, Using Default"); Utils.create_config_file(); Utils.reload_config_file(); }
 
             return false;
         }
