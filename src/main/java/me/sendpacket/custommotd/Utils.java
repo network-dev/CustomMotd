@@ -2,11 +2,9 @@ package me.sendpacket.custommotd;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Utils {
