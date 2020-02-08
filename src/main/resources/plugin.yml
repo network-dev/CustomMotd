@@ -6,3 +6,4 @@ authors: [SendPacket]
 commands:
   cmotd:
     description: Reload the MOTD from the Config File.
+    permission: cmotd.reload
