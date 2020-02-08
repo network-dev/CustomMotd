@@ -22,7 +22,8 @@ public class Utils {
         motd_line_2 = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Line2"));
     }
 
-    public static void create_config_file() {
+    public static void create_config_file()
+    {
         plugin.getConfig().addDefault("MaxPlayers", motd_maxplayers);
         plugin.getConfig().addDefault("Line1", motd_line_1.replace('§', '&'));
         plugin.getConfig().addDefault("Line2", motd_line_2.replace('§', '&'));
@@ -33,9 +34,11 @@ public class Utils {
 
     public static boolean config_file_exists()
     {
-        if(Utils.plugin.getDataFolder().exists()) {
+        if(Utils.plugin.getDataFolder().exists())
+        {
             File f = new File(Utils.plugin.getDataFolder() + "/config.yml");
-            if (f.exists()) {
+            if (f.exists())
+            {
                 return true;
             }
         }

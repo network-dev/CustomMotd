@@ -5,4 +5,4 @@ api-version: 1.13
 authors: [SendPacket]
 commands:
   cmotd:
-    description: motd
+    description: Reload the MOTD from the Config File.

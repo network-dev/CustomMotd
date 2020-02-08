@@ -13,7 +13,8 @@ public final class CustomMotd extends JavaPlugin implements Listener {
     private String plugin_prefix = "[CustomMOTD] ";
 
     @Override
-    public void onEnable() {
+    public void onEnable()
+    {
         Bukkit.getServer().getLogger().info(plugin_prefix+"Plugin enabled");
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
 
@@ -26,17 +27,21 @@ public final class CustomMotd extends JavaPlugin implements Listener {
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable()
+    {
         Bukkit.getServer().getLogger().info(plugin_prefix+"Plugin disabled");
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("cmotd")) {
-            try {
+        if (command.getName().equalsIgnoreCase("cmotd"))
+        {
+            try
+            {
                 Utils.reload_config_file();
                 sender.sendMessage(plugin_prefix + "Reloaded!");
             }catch (Exception e){ sender.sendMessage(plugin_prefix + "Invalid Config Found"); }
+
             return false;
         }
         return super.onCommand(sender, command, label, args);
