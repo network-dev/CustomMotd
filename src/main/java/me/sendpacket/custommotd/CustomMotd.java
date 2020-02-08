@@ -5,10 +5,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.InputStreamReader;
 
 public final class CustomMotd extends JavaPlugin implements Listener {
 
@@ -50,16 +53,36 @@ public final class CustomMotd extends JavaPlugin implements Listener {
                             } else {
                                 if (ArrayUtils.contains(Utils.line1_alias, args[0])) {
                                     try {
-                                        Utils.set_line1(args[1]);
-                                        sender.sendMessage(Utils.plugin_prefix + "Set line 1 to '" + ChatColor.translateAlternateColorCodes('&', args[1]) + "'");
+                                        String new_motd = "";
+                                        for(int i = 1; i < args.length; i++)
+                                        {
+                                            if(i > 1)
+                                            {
+                                                new_motd += " " + args[i];
+                                            }else{
+                                                new_motd = args[i];
+                                            }
+                                        }
+                                        Utils.set_line1(new_motd);
+                                        sender.sendMessage(Utils.plugin_prefix + "Set line 1 to '" + ChatColor.translateAlternateColorCodes('&', new_motd) + ChatColor.WHITE + "'");
                                     } catch (Exception e) {
                                         sender.sendMessage(Utils.plugin_prefix + "Use: line1 <text>");
                                     }
                                 } else {
                                     if (ArrayUtils.contains(Utils.line2_alias, args[0])) {
                                         try {
-                                            Utils.set_line2(args[1]);
-                                            sender.sendMessage(Utils.plugin_prefix + "Set line 2 to '" + ChatColor.translateAlternateColorCodes('&', args[1]) + "'");
+                                            String new_motd = "";
+                                            for(int i = 1; i < args.length; i++)
+                                            {
+                                                if(i > 1)
+                                                {
+                                                    new_motd += " " + args[i];
+                                                }else{
+                                                    new_motd = args[i];
+                                                }
+                                            }
+                                            Utils.set_line2(new_motd);
+                                            sender.sendMessage(Utils.plugin_prefix + "Set line 2 to '" + ChatColor.translateAlternateColorCodes('&', new_motd) + ChatColor.WHITE + "'");
                                         } catch (Exception e) {
                                             sender.sendMessage(Utils.plugin_prefix + "Use: line2 <text>");
                                         }
@@ -86,7 +109,7 @@ public final class CustomMotd extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onServerRequest(ServerListPingEvent event) {
-        event.setMotd(Utils.motd_line_1 + "\n" + Utils.motd_line_2);
+        event.setMotd(Utils.motd_line_1 + ChatColor.stripColor("\n") + Utils.motd_line_2);
         if (Utils.use_maxplayers) {
             event.setMaxPlayers(Utils.motd_maxplayers);
         }
