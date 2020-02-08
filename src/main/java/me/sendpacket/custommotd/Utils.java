@@ -14,7 +14,7 @@ public class Utils {
     public static String motd_line_1 = "§6[§cDefault§6] §fThis is an §l§nexample";
     public static String motd_line_2 = "§6[§cDefault§6] §fThis is an §l§nexample";
     public static boolean use_maxplayers = true;
-    public static int motd_maxplayers = 999;
+    public static int motd_maxplayers = 0;
 
     public static String[] help_alias = {"h","help","hp"};
     public static String[] reload_alias = {"r","reload","rl"};
