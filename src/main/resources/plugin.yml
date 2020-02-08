@@ -1,0 +1,8 @@
+name: CustomMotd
+version: ${project.version}
+main: me.sendpacket.custommotd.CustomMotd
+api-version: 1.13
+authors: [SendPacket]
+commands:
+  cmotd:
+    description: motd

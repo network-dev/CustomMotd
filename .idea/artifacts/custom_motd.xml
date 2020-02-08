@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="custom_motd">
+    <output-path>$PROJECT_DIR$/out/artifacts/custom_motd</output-path>
+    <root id="archive" name="custom_motd.jar">
+      <element id="module-output" name="CustomMotd" />
+    </root>
+  </artifact>
+</component>
