@@ -5,5 +5,5 @@ api-version: 1.13
 authors: [SendPacket]
 commands:
   cmotd:
-    description: Reload the MOTD from the Config File.
+    description: Modify the MOTD of the Server
     permission: cmotd.use
